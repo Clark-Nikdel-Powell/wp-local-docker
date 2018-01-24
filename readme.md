@@ -6,11 +6,9 @@ This is a Docker based local development environment for WordPress.
 
 This project is based on [docker-compose](https://docs.docker.com/compose/). By default, the following containers are started: PHP-FPM, MariaDB, Elasticsearch, nginx, and Memcached. The `/wordpress` directory is the web root which is mapped to the nginx container.
 
-You can directly edit PHP, nginx, and Elasticsearch configuration files from within the repo as they are mapped to the correct locations in containers.
+You can directly edit PHP, nginx, and configuration files from within the repo as they are mapped to the correct locations in containers.
 
 A [custom phpfpm image](https://github.com/10up/phpfpm-image) is used for this environment that adds a few extra things to the PHP-FPM image.
-
-The `/config/elasticsearch/plugins` folder is mapped to the plugins folder in the Elasticsearch container. You can drop Elasticsearch plugins in this folder to have them installed within the container.
 
 ## Requirements
 
@@ -19,7 +17,7 @@ The `/config/elasticsearch/plugins` folder is mapped to the plugins folder in th
 
 ## Setup
 
-1. `git clone https://github.com/10up/wp-local-docker.git <my-project-name>`
+1. `git clone https://github.com/Clark-Nikdel-Powell/wp-local-docker.git <my-project-name>`
 1. `cd <my-project-name>`
 1. `docker-compose up`
 1. Run setup to download WordPress and create a `wp-config.php` file.
@@ -36,12 +34,6 @@ Username: wordpress
 Password: password
 Host: mysql
 ```
-
-Default Elasticsearch connection information (from within PHP-FPM container):
-
-```Host: http://elasticsearch:9200```
-
-The Elasticsearch container is configured for a maximum heap size of 750MB to prevent out of memory crashes when using the default 2GB memory limit enforced by Docker for Mac and Docker for Windows installations or for Linux installations limited to less than 2GB. If you require additional memory for Elasticsearch override the value in a `docker-compose.override.yml` file as described below.
 
 ## Docker Compose Overrides File
 
