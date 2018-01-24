@@ -36,7 +36,7 @@ services:
       # Add plugin volumes here
       - "./app/wp-content/plugins/PLUGIN:/var/www/html/wp-content/plugins/PLUGIN"
       # Add theme volumes here
-      - "./app/wp-content/themes/PLUGIN:/var/www/html/wp-content/themes/PLUGIN"
+      - "./app/wp-content/themes/THEME:/var/www/html/wp-content/themes/THEME"
     restart: always
     extra_hosts:
       - "docker-local.dev:172.18.0.1"
@@ -55,5 +55,5 @@ services:
       # Add plugin volumes here
       - "./app/wp-content/plugins/PLUGIN:/var/www/html/wp-content/plugins/PLUGIN"
       # Add theme volumes here
-      - "./app/wp-content/themes/PLUGIN:/var/www/html/wp-content/themes/PLUGIN"
+      - "./app/wp-content/themes/THEME:/var/www/html/wp-content/themes/THEME"
     restart: always
