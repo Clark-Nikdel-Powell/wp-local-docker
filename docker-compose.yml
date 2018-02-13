@@ -4,7 +4,6 @@ services:
     image: mysql:latest
     volumes:
       - "./data/db:/var/lib/mysql"
-    restart: always
     ports:
       - "3306:3306"
     environment:
@@ -14,7 +13,6 @@ services:
       MYSQL_PASSWORD: password
   mailcatcher:
      image: schickling/mailcatcher
-     restart: always
      ports:
        - "1025:1025"
        - "1080:1080"
@@ -22,7 +20,6 @@ services:
        MAILCATCHER_PORT: 1025
   memcached:
     image: memcached:latest
-    restart: always
   phpfpm:
     image: 10up/phpfpm
     depends_on:
@@ -37,7 +34,6 @@ services:
       - "./app/wp-content/plugins/PLUGIN:/var/www/html/wp-content/plugins/PLUGIN"
       # Add theme volumes here
       - "./app/wp-content/themes/THEME:/var/www/html/wp-content/themes/THEME"
-    restart: always
     extra_hosts:
       - "docker-local.dev:172.18.0.1"
   nginx:
@@ -56,4 +52,3 @@ services:
       - "./app/wp-content/plugins/PLUGIN:/var/www/html/wp-content/plugins/PLUGIN"
       # Add theme volumes here
       - "./app/wp-content/themes/THEME:/var/www/html/wp-content/themes/THEME"
-    restart: always
