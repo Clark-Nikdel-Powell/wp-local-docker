@@ -83,3 +83,9 @@ MailCatcher runs a simple local SMTP server which catches any message sent to it
 ## Credits
 
 This project is our own flavor of an environment created by John Bloch.
+
+## Troubleshooting
+
+### MySQL won't start
+
+We downgraded from mysql:latest to mysql:5 because MySQL 8 has some authentication setup that no one [supports yet](https://tableplus.io/blog/2018/07/failed-to-load-caching-sha2-password-authentication-plugin-solved.html). If you run into that, you'll need to clear out the contents of the `/data` directory in order to start from scratch. It may also be helpful to [remove the images and containers](https://linuxize.com/post/how-to-remove-docker-images-containers-volumes-and-networks/) you're not using.
