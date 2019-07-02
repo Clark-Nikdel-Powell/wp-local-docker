@@ -19,12 +19,17 @@ A [custom phpfpm image](https://github.com/10up/phpfpm-image) is used for this e
 
 1. `git clone https://github.com/Clark-Nikdel-Powell/wp-local-docker.git <my-project-name>`
 1. `cd <my-project-name>`
-1. `docker-compose up`
+1. Clone the project repo into the `app` directory.
+1. Run `docker-compose up`.
 1. Run setup to download WordPress and create a `wp-config.php` file.
 	1. On Linux / Unix / OSX, run `sh bin/setup.sh`.
 	2. On Windows, run `./bin/setup`.
-1. Navigate to `http://localhost` in a browser to finish WordPress setup.
-	1. If you want to use a domain other than `http://localhost`, you'll need to add an entry to your hosts file. Ex: `127.0.0.1 docker.dev`
+1. Edit your hosts file to add a local domain.
+	1. In Terminal, enter `sudo nano /etc/hosts`. Enter your computer password.
+	1. Add a local hosts entry for the new dev site, e.g. `127.0.0.1 docker.test`.
+	1. Hit ⌃+O to write the file changes, then ↩ to confirm the filename.
+	1. Hit ⌃+X to exit the editor.
+1. Navigate to your local domain in a browser to finish WordPress setup.
 
 Default MySQL connection information (from within PHP-FPM container):
 
