@@ -20,6 +20,7 @@ A [custom phpfpm image](https://github.com/10up/phpfpm-image) is used for this e
 1. `git clone https://github.com/Clark-Nikdel-Powell/wp-local-docker.git <my-project-name>`
 1. `cd <my-project-name>`
 1. Clone the project repo into the `app` directory.
+1. Edit `docker-composer.yml` under the phpfpm and nginx images to add the project plugin and theme volumes. If you centralize your local plugins, you can add those as additional volumes.
 1. Run `docker-compose up`.
 1. Run setup to download WordPress and create a `wp-config.php` file.
 	1. On Linux / Unix / OSX, run `sh bin/setup.sh`.
