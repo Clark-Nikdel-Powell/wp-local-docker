@@ -59,7 +59,7 @@ services:
 
 ## WP-CLI
 
-Add this alias to `~/.bash_profile` to easily run WP-CLI command.
+Add this alias to `~/.bash_profile` to run the WP-CLI command.
 
 ```
 alias dcwp='docker-compose exec --user www-data phpfpm wp'
@@ -72,7 +72,7 @@ There is also a script in the `/bin` directory that will allow you to execute WP
 
 ## SSH Access
 
-You can easily access the WordPress/PHP container with `docker-compose exec`. Here's a simple alias to add to your `~/.bash_profile`:
+You can access the WordPress/PHP container with `docker-compose exec`. Here's an alias to add to your `~/.bash_profile`:
 
 ```
 alias dcbash='docker-compose exec --user root phpfpm bash'
@@ -84,7 +84,7 @@ Alternatively, there is a script in the `/bin` directory that allows you to SSH 
 
 ## MailCatcher
 
-MailCatcher runs a simple local SMTP server which catches any message sent to it, and displays it in it's built-in web interface. All emails sent by WordPress will be intercepted by MailCatcher. To view emails in the MailCatcher web interface, navigate to `http://localhost:1080` in your web browser of choice.
+MailCatcher runs a local SMTP server which catches any message sent to it, and displays it in it's built-in web interface. All emails sent by WordPress will be intercepted by MailCatcher. To view emails in the MailCatcher web interface, navigate to `http://localhost:1080` in your web browser of choice.
 
 ## Credits
 
